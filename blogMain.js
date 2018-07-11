@@ -43,6 +43,7 @@ Blog.find({author:'Sarah Brenan'}, (error, docs) => {
 */
 
 //Update con _id
+/*
 Blog.update({_id:'5b45c42ef7b9a6433a53bbf6'},{$set: {hidden:true}},
 (error, docs) => {
     if(error){
@@ -50,6 +51,18 @@ Blog.update({_id:'5b45c42ef7b9a6433a53bbf6'},{$set: {hidden:true}},
         process.exit(1);
     }
     console.log("<------ Actualización ----->");
+    console.log(docs);
+    process.exit(0);
+});
+*/
+
+//delete con _id
+Blog.findByIdAndRemove({_id:'5b45c3b3e2f41842e4276bf0'},(error,docs)=>{
+    if(error){
+        console.log(error);
+        process.exit(1);
+    }
+    console.log("<----- Borrado ----->");
     console.log(docs);
     process.exit(0);
 });
