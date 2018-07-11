@@ -30,12 +30,26 @@ blog1.save((error) => {
 */
 
 //Consulta por autor
+/*
 Blog.find({author:'Sarah Brenan'}, (error, docs) => {
     if(error){
         console.log(error);
         process.exit(1);
     }
     console.log("<------- Consulta por Autor------->");
+    console.log(docs);
+    process.exit(0);
+});
+*/
+
+//Update con _id
+Blog.update({_id:'5b45c42ef7b9a6433a53bbf6'},{$set: {hidden:true}},
+(error, docs) => {
+    if(error){
+        console.log(error);
+        process.exit(1);
+    }
+    console.log("<------ Actualización ----->");
     console.log(docs);
     process.exit(0);
 });
